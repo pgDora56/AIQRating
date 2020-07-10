@@ -1,0 +1,45 @@
+name:                AIQRating
+version:             0.1.0.0
+synopsis:            Initial project template from stack
+description:         Please see README.md
+homepage:            https://github.com/pgDora56/AIQRating#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Dora F.
+maintainer:          doradora.prog@gmail.com
+copyright:           2020 Dora F.
+category:            Web
+build-type:          Simple
+-- extra-source-files:
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     Lexer, Writer, Processer
+  build-depends:       base >= 4.7 && < 5
+                     , text
+                     , sqlite-simple
+  default-language:    Haskell2010
+
+executable AIQRating-exe
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , AIQRating
+                     , text
+  default-language:    Haskell2010
+
+test-suite AIQRating-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+                     , AIQRating
+                     , text
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/pgDora56/AIQRating
